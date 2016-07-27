@@ -1,27 +1,32 @@
 <?php
 
-//namespace App;
-//
-//
-//class View
-//{
-//    private $TEMPLATE_DIR = __DIR__ . '/../web/templates/';
-//
-//    private $data;
-//
-//    public function assign($data)
-//    {
-//        $this->data = $data;
-//    }
-//
-//    public function display($templateName)
-//    {
-//        $$templateName = $this->data;
-//        require $this->TEMPLATE_DIR . $templateName . '.php';
-//    }
-//
-//    public static function header()
-//    {
-//        self::display('header');
-//    }
-//} @todo Разобратсья с View
+namespace App;
+
+class View
+{
+    protected $data = [];
+
+    public function __set($key, $value)
+    {
+        $this->data[$key] = $value;
+    }
+
+    public function __get($key)
+    {
+        return $this->data[$key];
+    }
+
+    public function display($template)
+    {
+        echo $this->render($template);
+    }
+
+    public function render($template)
+    {
+        ob_start();
+         include $template;
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+}

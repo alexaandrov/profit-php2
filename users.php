@@ -1,12 +1,16 @@
 <?php
 
 use App\Models\User;
+use App\View;
 
 require __DIR__ .'/autoload.php';
 
-$users = User::findAll();
+$user = new User();
 
-include __DIR__ . '/web/templates/users.php';
+$view = new View();
+$view->title = 'Index';
+$view->users = User::findAll();
+echo $view->render(__DIR__ . '/web/templates/users.php');
 
 // ActiveRecord Model
 //$users = new User();

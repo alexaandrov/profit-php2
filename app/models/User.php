@@ -49,6 +49,7 @@ class User extends Model implements HasEmail
     }
 
     /**
+     * @deprecated
      * @return string
      */
     public function getEmail()
