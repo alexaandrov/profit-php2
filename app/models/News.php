@@ -10,6 +10,8 @@ class News extends Model
 
     protected $id;
 
+    protected $author_id;
+
     protected $title;
 
     protected $text;
@@ -36,5 +38,13 @@ class News extends Model
     public function getText()
     {
         return $this->text;
+    }
+
+    public function getAuthor()
+    {
+        if (isset($this->author_id)) {
+            $author = Author::findById($this->author_id);
+            return $author[0];
+        }
     }
 }

@@ -2,12 +2,15 @@
 
 require __DIR__ . '/autoload.php';
 
+use App\View;
 use App\Models\News;
 
-$news = News::findAll();
+$view = new View();
+$view->title = 'News';
+$view->news = News::FindAll();
 
 if (! empty($_GET['id'])) {
-    $news = News::findById((int)$_GET['id']);
+    $view->news = News::findById((int)$_GET['id']);
 }
 
-include __DIR__ . '/web/templates/news.php';
+$view->display(__DIR__ . '/web/templates/news.php');

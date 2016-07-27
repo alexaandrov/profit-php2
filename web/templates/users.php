@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Users</title>
+    <title><?= $title ?></title>
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 <body>
 <?php require __DIR__ . '/header.php' ?>
 <h1>All users</h1>
-<?php foreach ($this->users as $user): ?>
+<?php foreach ($users as $user): ?>
     <div class="panel panel-default">
         <div class="panel-heading"><?= $user->getName() ?></div>
         <div class="panel-body">
