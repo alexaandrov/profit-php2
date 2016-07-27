@@ -25,7 +25,7 @@ class User extends Model implements HasEmail
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -33,7 +33,23 @@ class User extends Model implements HasEmail
     }
 
     /**
-     * @return mixed
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @return string
      */
     public function getEmail()
     {
