@@ -18,8 +18,8 @@
     <![endif]-->
 </head>
 <body>
-<?php require __DIR__ . '/header.php' ?>
-<h1>All users</h1>
+<?php require __DIR__ . '/../../web/templates/header.php' ?>
+
 <?php foreach ($users as $user): ?>
     <div class="panel panel-default">
         <div class="panel-heading"><?= $user->getName() ?></div>

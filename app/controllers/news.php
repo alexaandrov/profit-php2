@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/autoload.php';
+require __DIR__ . '/../../autoload.php';
 
 use App\View;
 use App\Models\News;
@@ -13,4 +13,4 @@ if (! empty($_GET['id'])) {
     $view->news = News::findById((int)$_GET['id']);
 }
 
-$view->display(__DIR__ . '/web/templates/news.php');
+$view->display(__DIR__ . '/../views/news.php');
