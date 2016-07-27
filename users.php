@@ -13,4 +13,3 @@ include __DIR__ . '/web/templates/users.php';
 //$users->setFirstName('John');
 //$users->setLastName('Konel');
 //$users->setEmail('kornel@kk.ru');
-//$users->insert();
