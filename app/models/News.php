@@ -16,6 +16,26 @@ class News extends Model
 
     protected $text;
 
+    public function __get($k)
+    {
+        switch ($k) {
+            case 'author':
+                return Author::findById((int)$this->author_id);
+            default:
+                return null;
+        }
+    }
+
+    public function __isset($k)
+    {
+        switch ($k) {
+            case 'author':
+                return !empty($this->author_id);
+            default:
+                return false;
+        }
+    }
+
     /**
      * @return string
      */
@@ -40,11 +60,11 @@ class News extends Model
         return $this->text;
     }
 
-    public function getAuthor()
-    {
-        if (isset($this->author_id)) {
-            $author = Author::findById($this->author_id);
-            return $author[0];
-        }
-    }
+//    public function getAuthor()
+//    {
+//        if (isset($this->author_id)) {
+//            $author = Author::findById($this->author_id);
+//            return $author;
+//        }
+//    }
 }

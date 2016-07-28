@@ -28,8 +28,8 @@
         <div class="panel-body">
             <p><?= $article->getText() ?></p>
             <p class="author">
-                <?php $author = $article->getAuthor(); ?>
-                <?php if (isset($author)): ?>
+                <?php $author = $article->author ?>
+                <?php if (!empty($author)): ?>
                     <strong><?= $author->getName(); ?></strong>
                     <a href="mailto:<?= $author->getEmail() ?>"><?= $author->getEmail(); ?></a>
                 <?php else: ?>
