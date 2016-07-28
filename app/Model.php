@@ -45,6 +45,10 @@ abstract class Model
         );
     }
 
+    /**
+     * @param int $id
+     * @return object or bool false
+     */
     public static function findById(int $id)
     {
         $db = Db::instance();
@@ -61,7 +65,7 @@ abstract class Model
         );
 
         if ($data) {
-            return $data;
+            return $data[0];
         } else {
             return false;
         }
