@@ -2,26 +2,26 @@
 
 namespace App\Controllers;
 
-use App\View;
-
 class News extends Controller
 {
+    protected $viewPath = __DIR__ . '/../views/news/';
+
     protected function actionIndex()
     {
         $this->view->title = 'News';
         $this->view->news = \App\Models\News::FindAll();
-        $this->view->display(__DIR__ . '/../views/news.php');
+        $this->view->display(__DIR__ . '/../views/news/index.php');
     }
 
-    protected function actionOne()
+    protected function actionView()
     {
-        if (! empty($_GET['id'])) {
+        if (!empty($_GET['id'])) {
             $id = $_GET['id'];
         } else {
             $id = 1;
         }
         $this->view->title = 'One news';
         $this->view->article = \App\Models\News::FindById($id);
-        $this->view->display(__DIR__ . '/../views/one-news.php');
+        $this->view->display($this->viewPath . 'view.php');
     }
 }
