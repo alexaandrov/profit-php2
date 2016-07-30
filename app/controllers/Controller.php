@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\View;
 
-class Controller
+abstract class Controller
 {
     protected $view;
 
