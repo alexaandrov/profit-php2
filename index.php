@@ -1,8 +1,8 @@
 <?php
 
-//header("Location: " .'/app/controllers/index.php');
-
 require __DIR__ . '/autoload.php';
 
+$action = !empty($_GET['action']) ? $_GET['action'] : 'Index';
+
 $controller = new \App\Controllers\News();
-$controller->action('Index');
+$controller->action($action);
