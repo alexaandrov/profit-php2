@@ -18,7 +18,7 @@
     <![endif]-->
 </head>
 <body>
-<?php require __DIR__ . '/../../web/templates/header.php' ?>
+<?php require __DIR__ . '/../../../web/templates/header.php' ?>
 
 <div class="panel panel-default">
     <div class="panel-heading">
