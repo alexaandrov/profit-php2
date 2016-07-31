@@ -10,7 +10,7 @@ class News extends Controller
     {
         $this->view->title = 'News';
         $this->view->news = \App\Models\News::FindAll();
-        $this->view->display(__DIR__ . '/../views/news/index.php');
+        $this->view->display($this->viewPath . 'index.php');
     }
 
     protected function actionView()

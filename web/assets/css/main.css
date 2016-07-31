@@ -1,7 +1,7 @@
 body {
-    margin: 0 auto;
+    margin: 0 auto; !important;
     padding: 0 10px;
-    max-width: 960px;
+    max-width: 960px; !important;
     font-family: "Segoe UI", monospace;
 }
 
