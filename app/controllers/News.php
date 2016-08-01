@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use \App\Models\News;
+use \App\Models\News as NewsModel;
 
 class News extends Controller
 {
@@ -11,7 +11,7 @@ class News extends Controller
     protected function actionIndex()
     {
         $this->view->title = 'News';
-        $this->view->news = News::FindAll();
+        $this->view->news = NewsModel::FindAll();
         $this->view->display($this->viewPath . 'index.php');
     }
 
@@ -19,24 +19,24 @@ class News extends Controller
     {
         $id = $_GET['id'];
         $this->view->title = 'News ' . $id;
-        $this->view->article = News::FindById($id);
+        $this->view->article = NewsModel::FindById($id);
         $this->view->display($this->viewPath . 'view.php');
     }
 
     protected function actionUpdate()
     {
         $id = $_GET['id'];
-        $model = News::findById($id);
+        $model = NewsModel::findById($id);
         
         $this->view->title = 'Edit news ' . $id;
         if (empty($_POST)) {
-            $this->view->article = News::FindById($id);
+            $this->view->article = NewsModel::FindById($id);
             $this->view->display($this->viewPath . 'update.php');
         } else {
             $model->setTitle($_POST['title']);
             $model->setText($_POST['text']);
             $this->view->status = $model->update();
-            $this->view->article = News::FindById($id);
+            $this->view->article = NewsModel::FindById($id);
             $this->view->display($this->viewPath . 'update.php');
         }
     }
@@ -47,7 +47,7 @@ class News extends Controller
             $this->view->display($this->viewPath . 'create.php');
         } else {
             $this->view->title = "Create news";
-            $model = new \App\Models\News();
+            $model = new NewsModel();
             $model->setAuthor($_POST['author_id']);
             $model->setTitle($_POST['title']);
             $model->setText($_POST['text']);
@@ -58,7 +58,7 @@ class News extends Controller
 
     protected function actionDelete()
     {
-        $this->view->status = News::deleteById($_GET['id']);
+        $this->view->status = NewsModel::deleteById($_GET['id']);
         $this->actionIndex();
     }
 }
