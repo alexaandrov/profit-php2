@@ -20,7 +20,27 @@ class News extends Controller
         $this->view->article = \App\Models\News::FindById($id);
         $this->view->display($this->viewPath . 'view.php');
     }
-    
+
+    protected function actionUpdate()
+    {
+        $id = $_GET['id'];
+        $this->view->title = 'Edit news ' . $id;
+        if (empty($_POST)) {
+            $this->view->article = \App\Models\News::FindById($id);
+            $this->view->display($this->viewPath . 'update.php');
+        } else {
+            $data = [
+                'text'  => $_POST['text'],
+                'title' => $_POST['title'],
+                'id'    => $_GET['id']
+            ];
+            $news = new \App\Models\News();
+            $this->view->status = $news->update($data);
+            $this->view->article = \App\Models\News::FindById($id);
+            $this->view->display($this->viewPath . 'update.php');
+        }
+    }
+
     protected function actionDelete()
     {
         $this->view->status = \App\Models\News::deleteById($_GET['id']);

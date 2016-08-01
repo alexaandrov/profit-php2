@@ -60,6 +60,22 @@ class News extends Model
         return $this->text;
     }
 
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @param mixed $text
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
+    }
+
 //    public function getAuthor()
 //    {
 //        if (isset($this->author_id)) {

@@ -48,6 +48,21 @@ abstract class Model
         return true;
     }
 
+    public function update($data)
+    {
+        $sql = 'UPDATE ' . static::TABLE . ' SET text=:text, title=:title
+        WHERE id=:id';
+
+        $values = [
+            ':id'    => $data['id'],
+            ':text'  => $data['text'],
+            ':title' => $data['title']
+        ];
+
+        $db = Db::instance();
+        return $db->execute($sql, $values);
+    }
+
     public static function findAll()
     {
         $db = Db::instance();
