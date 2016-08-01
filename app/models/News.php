@@ -59,6 +59,12 @@ class News extends Model
     {
         return $this->text;
     }
+    
+    public function setAuthor($id) {
+        if (!empty($id)) {
+            $this->author_id = $id;
+        }
+    }
 
     /**
      * @param mixed $title
@@ -79,12 +85,4 @@ class News extends Model
             $this->text = $text;
         }
     }
-
-//    public function getAuthor()
-//    {
-//        if (isset($this->author_id)) {
-//            $author = Author::findById($this->author_id);
-//            return $author;
-//        }
-//    }
 }

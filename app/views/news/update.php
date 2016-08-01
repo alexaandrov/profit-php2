@@ -8,7 +8,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">Article: <?= $article->getId() ?></div>
         <div class="panel-body">
-            <form action="index.php?controller=News&action=Update&id=<?= $article->getId() ?>" method="post">
+            <form action="index.php?controller=News&action=Update&id=<?= $article->getId() ?>" method="POST">
                 <p>Title:</p>
                 <article><?= $article->getTitle(); ?></article>
                 <input type="text" name="title">

@@ -1,5 +1,5 @@
 <div class="add">
-    <a href="?controller=News&action=Delete"><li class="fa fa-plus-circle"></li></a>
+    <a href="?controller=News&action=Create"><li class="fa fa-plus-circle"></li></a>
 </div>
 <?php if (isset($status) && $status): ?>
 <div class="alert alert-success">Новость № <?= $_GET['id'] ?> удалена</div>

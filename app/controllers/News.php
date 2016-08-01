@@ -41,6 +41,21 @@ class News extends Controller
         }
     }
 
+    protected function actionCreate()
+    {
+        if (empty($_POST)) {
+            $this->view->display($this->viewPath . 'create.php');
+        } else {
+            $this->view->title = "Create news";
+            $model = new \App\Models\News();
+            $model->setAuthor($_POST['author_id']);
+            $model->setTitle($_POST['title']);
+            $model->setText($_POST['text']);
+            $this->view->status = $model->insert();
+            $this->view->display($this->viewPath . 'create.php');
+        }
+    }
+
     protected function actionDelete()
     {
         $this->view->status = News::deleteById($_GET['id']);

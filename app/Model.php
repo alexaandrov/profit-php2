@@ -32,20 +32,7 @@ abstract class Model
             VALUES (' . implode(', ', array_keys($values)) . ');';
 
         $db = Db::instance();
-        $db->execute($sql, $values);
-    }
-
-    public static function deleteById($id)
-    {
-        if (! static::findById($id)) {
-            return false;
-        }
-        $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=:id';
-        $params = [':id' => $id];
-
-        $db = Db::instance();
-        $db->execute($sql, $params);
-        return true;
+        return $db->execute($sql, $values);
     }
 
     public function update()
@@ -89,6 +76,19 @@ abstract class Model
             'SELECT * FROM ' . static::TABLE,
             static::class
         );
+    }
+
+    public static function deleteById($id)
+    {
+        if (! static::findById($id)) {
+            return false;
+        }
+        $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=:id';
+        $params = [':id' => $id];
+
+        $db = Db::instance();
+        $db->execute($sql, $params);
+        return true;
     }
 
     /**
