@@ -4,11 +4,14 @@ require __DIR__ . '/autoload.php';
 
 $url = $_SERVER['REQUEST_URI'];
 
-$controller = !empty($_GET['controller']) ? $_GET['controller'] : 'News';
+$controller = !empty($_GET['controller']) ? $_GET['controller'] : 'Site';
 $action = !empty($_GET['action']) ? $_GET['action'] : 'Index';
 
 
 switch ($controller) {
+    case 'Site':
+        $controller = new \App\Controllers\Site();
+        break;
     case 'News':
         $controller = new \App\Controllers\News();
         break;
