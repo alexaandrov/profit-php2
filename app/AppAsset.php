@@ -12,7 +12,8 @@ class AppAsset
 
     public $css = [
         'css/main.css',
-        'css/bootstrap.min.css'
+        'css/bootstrap.min.css',
+        'css/font-awesome.min.css'
     ];
     public $js = [
         'js/jquery.min.js',
