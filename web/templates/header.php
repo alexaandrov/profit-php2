@@ -1,7 +1,7 @@
 <header>
     <ul>
         <li><a href="index.php">Home</a></li>
-        <li><a href="news.php">News</a></li>
-        <li><a href="users.php">Users</a></li>
+        <li><a href="?controller=News&action=Index">News</a></li>
+        <li><a href="?controller=User&action=Index">Users</a></li>
     </ul>
 </header>
