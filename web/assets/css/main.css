@@ -25,6 +25,16 @@ a:hover {
     text-decoration: underline;
 }
 
+.add {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.add li {
+    font-size: 40px;
+}
+
 /* Header start */
 header {
     margin: 20px 0;

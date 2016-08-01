@@ -35,6 +35,19 @@ abstract class Model
         $db->execute($sql, $values);
     }
 
+    public static function deleteById($id)
+    {
+        if (! static::findById($id)) {
+            return false;
+        }
+        $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=:id';
+        $params = [':id' => $id];
+
+        $db = Db::instance();
+        $db->execute($sql, $params);
+        return true;
+    }
+
     public static function findAll()
     {
         $db = Db::instance();
@@ -53,7 +66,7 @@ abstract class Model
     {
         $db = Db::instance();
 
-        if ($id < 1) {
+        if (empty($id) || $id < 1) {
             return false;
         }
 

@@ -15,13 +15,15 @@ class News extends Controller
 
     protected function actionView()
     {
-        if (!empty($_GET['id'])) {
-            $id = $_GET['id'];
-        } else {
-            $id = 1;
-        }
-        $this->view->title = 'One news';
+        $id = $_GET['id'];
+        $this->view->title = 'News ' . $id;
         $this->view->article = \App\Models\News::FindById($id);
         $this->view->display($this->viewPath . 'view.php');
+    }
+    
+    protected function actionDelete()
+    {
+        $this->view->status = \App\Models\News::deleteById($_GET['id']);
+        $this->actionIndex();
     }
 }
