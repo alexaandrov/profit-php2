@@ -65,7 +65,9 @@ class News extends Model
      */
     public function setTitle($title)
     {
-        $this->title = $title;
+        if (!empty($title)) {
+            $this->title = $title;
+        }
     }
 
     /**
@@ -73,7 +75,9 @@ class News extends Model
      */
     public function setText($text)
     {
-        $this->text = $text;
+        if (!empty($text)) {
+            $this->text = $text;
+        }
     }
 
 //    public function getAuthor()

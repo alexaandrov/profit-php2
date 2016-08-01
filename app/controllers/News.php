@@ -24,18 +24,16 @@ class News extends Controller
     protected function actionUpdate()
     {
         $id = $_GET['id'];
+        $model = \App\Models\News::findById($id);
+        
         $this->view->title = 'Edit news ' . $id;
         if (empty($_POST)) {
             $this->view->article = \App\Models\News::FindById($id);
             $this->view->display($this->viewPath . 'update.php');
         } else {
-            $data = [
-                'text'  => $_POST['text'],
-                'title' => $_POST['title'],
-                'id'    => $_GET['id']
-            ];
-            $news = new \App\Models\News();
-            $this->view->status = $news->update($data);
+            $model->setTitle($_POST['title']);
+            $model->setText($_POST['text']);
+            $this->view->status = $model->update();
             $this->view->article = \App\Models\News::FindById($id);
             $this->view->display($this->viewPath . 'update.php');
         }

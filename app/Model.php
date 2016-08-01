@@ -48,16 +48,34 @@ abstract class Model
         return true;
     }
 
-    public function update($data)
+    public function update()
     {
-        $sql = 'UPDATE ' . static::TABLE . ' SET text=:text, title=:title
-        WHERE id=:id';
+        if ($this->isNew()) {
+            return;
+        }
+        $columns = [];
+        $values = [];
+        foreach ($this as $key => $value) {
+            if ('id' == $key) {
+                $values[':'.$key] = $value;
+                continue;
+            }
+            $columns[] = $key;
+            $values[':'.$key] = $value;
+        }
 
-        $values = [
-            ':id'    => $data['id'],
-            ':text'  => $data['text'],
-            ':title' => $data['title']
-        ];
+        for ($i = 0; $i < count($columns); $i++) {
+            switch ($i) {
+                case 0:
+                    $sql = 'UPDATE ' . static::TABLE . ' SET ' . $columns[$i] . '=:' . $columns[$i] . ', ';
+                    continue;
+                case count($columns) - 1:
+                    $sql .= $columns[$i] . '=:' . $columns[$i] . ' WHERE id=:id';
+                    continue;
+                default:
+                    $sql .= $columns[$i] . '=:' . $columns[$i] . ', ';
+            }
+        }
 
         $db = Db::instance();
         return $db->execute($sql, $values);
