@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h2><a href="?id=<?= $article->getId() ?>"><?= $article->getTitle() ?></a></h2>
+        <?= $article->getTitle() ?>
     </div>
     <div class="panel-body">
         <p><?= $article->getText() ?></p>

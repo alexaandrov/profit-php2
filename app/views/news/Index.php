@@ -1,7 +1,7 @@
 <?php foreach ($news as $article): ?>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a href="?action=View&id=<?= $article->getId() ?>"><?= $article->getTitle() ?></a>
+            <a href="?controller=News&action=View&id=<?= $article->getId() ?>"><?= $article->getTitle() ?></a>
         </div>
         <div class="panel-body">
             <p><?= $article->getText() ?></p>
