@@ -11,8 +11,8 @@ class AppAsset
     public $assetsPath = '/web/assets/';
 
     public $css = [
-        'css/main.css',
         'css/bootstrap.min.css',
+        'css/main.css',
         'css/font-awesome.min.css'
     ];
     public $js = [
