@@ -17,6 +17,10 @@ switch ($controller) {
         break;
     case 'User':
         $controller = new \App\Controllers\User();
+        break;
+    default:
+        $controller = new \App\Controllers\Site();
+        break;
 }
 
 $controller->action($action);
