@@ -17,7 +17,7 @@ class AppAsset
     ];
     public $js = [
         'js/jquery.min.js',
-        'js/bootstrap.js'
+        'js/bootstrap.min.js'
     ];
 
     public function getCss()
