@@ -29,7 +29,7 @@ class User extends Controller
 
     protected function actionCreate()
     {
-        if (! isset($_POST)) {
+        if (! empty($_POST)) {
             $values = [
                 'firstName' => $_POST['firstName'],
                 'lastName'  => $_POST['lastName'],
@@ -38,13 +38,15 @@ class User extends Controller
         } else {
             $values = [];
         }
+        var_dump($values);
         try {
             $user = new \App\Models\User();
             $user->fill($values);
-            $user->save();
+            $this->view->status = $user->insert();
         } catch (MultiException $e) {
             $this->view->errors = $e;
         }
+        $this->view->title = 'Create user';
         $this->view->display($this->viewPath . 'create.php');
     }
 }

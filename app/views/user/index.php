@@ -1,3 +1,7 @@
+<div class="add">
+    <a href="?controller=User&action=Create"><li class="fa fa-plus-circle"></li></a>
+</div>
+
 <?php foreach ($users as $user): ?>
     <div class="panel panel-default">
         <div class="panel-heading"><a href="?controller=User&action=View&id=<?= $user->getId() ?>"><?= $user->getName() ?></a></div>

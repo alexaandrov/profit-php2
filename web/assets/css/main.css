@@ -99,3 +99,11 @@ article p {
     font-size: 0.9em;
 }
 /* Article end */
+
+input {
+    border-radius: 2px;
+    border: 0;
+    background-color: #eaeaea;
+    padding: 5px 10px;
+    /*box-shadow: 1px 1px 1px black;*/
+}

@@ -86,14 +86,22 @@ class User extends Model implements HasEmail
     {
         $e = new MultiException();
         if (empty($data['firstName'])) {
-            $e[] = new \Exception('Заголовок неверный');
+            $e[] = new \Exception('First name неверный');
+        } else {
+            $this->setFirstName($data['firstName']);
         }
         if (empty($data['lastName'])) {
-            $e[] = new \Exception('Текст неверный');
+            $e[] = new \Exception('Last name неверный');
+        } else {
+            $this->setLastName($data['lastName']);
         }
         if (empty($data['email'])) {
             $e[] = new \Exception('Неверный адрес эл. почты');
+        } else {
+            $this->setEmail($data['email']);
         }
-        throw $e;
+        if (empty($data['firstName']) || empty($data['lastName']) || empty($data['email'])) {
+            throw $e;
+        }
     }
 }
