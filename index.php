@@ -27,8 +27,13 @@ try {
 } catch (\App\Exceptions\Core $e) {
     echo 'Возникло ислючение приложения';
 } catch (\App\Exceptions\Db $e) {
+    $file = __DIR__ . '/errors.log';
+    $content = file_get_contents($file);
+    $newContent = $content . "\n" . "Database error: " . $e->getMessage() . "\n" . $e->getTraceAsString();
+    file_put_contents($file, $newContent);
     $view = new \App\View();
     $view->e = $e;
+    $view->title = 'Database error';
     $view->display(__DIR__ . '/web/templates/db-exception.php');
 }
 
