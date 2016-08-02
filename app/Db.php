@@ -2,6 +2,8 @@
 
 namespace App;
 
+use \App\Exceptions\Db as DbException;
+
 class Db
 {
     use Singleton;
@@ -13,7 +15,7 @@ class Db
         try {
             $this->dbh = new \PDO('mysql:host=localhost;dbname=php2.local', 'root', '');
         } catch (\PDOException $e) {
-            throw new \App\Exceptions\Db($e->getMessage());
+            throw new DbException($e->getMessage());
         }
     }
 
@@ -21,6 +23,9 @@ class Db
     {
         $sth = $this->dbh->prepare($sql);
         $res = $sth->execute($data);
+        if (! $res) {
+            throw new DbException('Допущена ошибка в запросе!');
+        }
         return $res;
     }
 
@@ -28,6 +33,9 @@ class Db
     {
         $sth = $this->dbh->prepare($sql);
         $res = $sth->execute($data);
+        if (! $res) {
+            throw new DbException('Допущена ошибка в запросе!');
+        }
         if (false !== $res) {
             return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
         }

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Exceptions\Db as DbException;
+
 abstract class Model
 {
     const TABLE = '';
@@ -27,12 +29,20 @@ abstract class Model
             $columns[] = $key;
             $values[':'.$key] = $value;
         }
-        $sql = 'INSERT INTO ' . static::TABLE .
+
+        $sql = 'INSERT NTO ' . static::TABLE .
             ' (' . implode(', ', $columns) . ')
             VALUES (' . implode(', ', array_keys($values)) . ');';
 
         $db = Db::instance();
-        return $db->execute($sql, $values);
+
+        try {
+            return $db->execute($sql, $values);
+        } catch (DbException $e) {
+            echo $e->getMessage() . '<br><br>';
+            echo $e->getTraceAsString();
+            die;
+        }
     }
 
     public function update()
@@ -65,17 +75,29 @@ abstract class Model
         }
 
         $db = Db::instance();
-        return $db->execute($sql, $values);
+
+        try {
+            return $db->execute($sql, $values);
+        } catch (DbException $e) {
+            echo $e->getMessage() . '<br><br>';
+            echo $e->getTraceAsString();
+            die;
+        }
     }
 
     public static function findAll()
     {
         $db = Db::instance();
-
-        return $db->query(
-            'SELECT * FROM ' . static::TABLE,
-            static::class
-        );
+        try {
+            return $db->query(
+                'SELECT * FROM ' . static::TABLE,
+                static::class
+            );
+        } catch (DbException $e) {
+            echo $e->getMessage() . '<br><br>';
+            echo $e->getTraceAsString() ;
+            die;
+        }
     }
 
     public static function deleteById($id)
@@ -83,11 +105,19 @@ abstract class Model
         if (! static::findById($id)) {
             return false;
         }
+
         $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=:id';
         $params = [':id' => $id];
-
         $db = Db::instance();
-        $db->execute($sql, $params);
+
+        try {
+            $db->execute($sql, $params);
+        }  catch (DbException $e) {
+            echo $e->getMessage() . '<br><br>';
+            echo $e->getTraceAsString() ;
+            die;
+        }
+
         return true;
     }
 
@@ -103,12 +133,17 @@ abstract class Model
             return false;
         }
 
-        $data = $db->query(
-            'SELECT * FROM ' . static::TABLE .
-            ' WHERE id=:id',
-            static::class,
-            [':id' => $id]
-        );
+        try {
+            $data = $db->query(
+                'SELECT * FROM ' . static::TABLE .
+                ' WHERE id=:id',
+                static::class,
+                [':id' => $id]
+            );
+        } catch (DbException $e) {
+            echo "Допущена ошибка в запросе";
+            die;
+        }
 
         if ($data) {
             return $data[0];
