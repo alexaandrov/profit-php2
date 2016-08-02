@@ -108,7 +108,7 @@ abstract class Model
         }
 //
         $data = $db->query(
-            'SELECT * FROM ' . static::TABLE .
+            'SELECT * ROM ' . static::TABLE .
             ' WHERE id=:id',
             static::class,
             [':id' => $id]

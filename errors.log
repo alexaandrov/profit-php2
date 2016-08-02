@@ -1,62 +1,36 @@
+Допущена ошибка в запросе!
+Допущена ошибка в запросе!
+Допущена ошибка в запросе!
+Допущена ошибка в запросе!
+#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * ROM ne...', 'App\\Models\\News', Array)
+#1 C:\Wamp\www\profit\php2\app\controllers\News.php(22): App\Model::findById(46)
+#2 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionView()
+#3 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('View')
+#4 {main}Допущена ошибка в запросе!
+#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * ROM ne...', 'App\\Models\\News', Array)
+#1 C:\Wamp\www\profit\php2\app\controllers\News.php(22): App\Model::findById(46)
+#2 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionView()
+#3 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('View')
+#4 {main}Допущена ошибка в запросе!
+#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * ROM ne...', 'App\\Models\\News', Array)
+#1 C:\Wamp\www\profit\php2\app\controllers\News.php(22): App\Model::findById(46)
+#2 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionView()
+#3 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('View')
+#4 {main}Допущена ошибка в запросе!
+#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * ROM ne...', 'App\\Models\\News', Array)
+#1 C:\Wamp\www\profit\php2\app\controllers\News.php(22): App\Model::findById(46)
+#2 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionView()
+#3 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('View')
+#4 {main}
+Допущена ошибка в запросе!
+#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * ROM ne...', 'App\\Models\\News', Array)
+#1 C:\Wamp\www\profit\php2\app\controllers\News.php(22): App\Model::findById(46)
+#2 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionView()
+#3 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('View')
+#4 {main}
 Error: Допущена ошибка в запросе!
-
-Error: Допущена ошибка в запросе!
-#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * FOM au...', 'App\\Models\\Auth...', Array)
-#1 C:\Wamp\www\profit\php2\app\models\News.php(23): App\Model::findById(1)
-#2 C:\Wamp\www\profit\php2\app\views\news\index.php(23): App\Models\News->__get('author')
-#3 C:\Wamp\www\profit\php2\app\View.php(31): include('C:\\Wamp\\www\\pro...')
-#4 C:\Wamp\www\profit\php2\app\View.php(21): App\View->render('C:\\Wamp\\www\\pro...')
-#5 C:\Wamp\www\profit\php2\app\controllers\News.php(15): App\View->display('C:\\Wamp\\www\\pro...')
-#6 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionIndex()
-#7 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('Index')
-#8 {main}
-Error: Допущена ошибка в запросе!
-#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * FOM au...', 'App\\Models\\Auth...', Array)
-#1 C:\Wamp\www\profit\php2\app\models\News.php(23): App\Model::findById(1)
-#2 C:\Wamp\www\profit\php2\app\views\news\index.php(23): App\Models\News->__get('author')
-#3 C:\Wamp\www\profit\php2\app\View.php(31): include('C:\\Wamp\\www\\pro...')
-#4 C:\Wamp\www\profit\php2\app\View.php(21): App\View->render('C:\\Wamp\\www\\pro...')
-#5 C:\Wamp\www\profit\php2\app\controllers\News.php(15): App\View->display('C:\\Wamp\\www\\pro...')
-#6 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionIndex()
-#7 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('Index')
-#8 {main}
-Error: Допущена ошибка в запросе!
-#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * FOM au...', 'App\\Models\\Auth...', Array)
-#1 C:\Wamp\www\profit\php2\app\models\News.php(23): App\Model::findById(1)
-#2 C:\Wamp\www\profit\php2\app\views\news\index.php(23): App\Models\News->__get('author')
-#3 C:\Wamp\www\profit\php2\app\View.php(31): include('C:\\Wamp\\www\\pro...')
-#4 C:\Wamp\www\profit\php2\app\View.php(21): App\View->render('C:\\Wamp\\www\\pro...')
-#5 C:\Wamp\www\profit\php2\app\controllers\News.php(15): App\View->display('C:\\Wamp\\www\\pro...')
-#6 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionIndex()
-#7 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('Index')
-#8 {main}
-Error: Допущена ошибка в запросе!
-#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * FOM au...', 'App\\Models\\Auth...', Array)
-#1 C:\Wamp\www\profit\php2\app\models\News.php(23): App\Model::findById(1)
-#2 C:\Wamp\www\profit\php2\app\views\news\index.php(23): App\Models\News->__get('author')
-#3 C:\Wamp\www\profit\php2\app\View.php(31): include('C:\\Wamp\\www\\pro...')
-#4 C:\Wamp\www\profit\php2\app\View.php(21): App\View->render('C:\\Wamp\\www\\pro...')
-#5 C:\Wamp\www\profit\php2\app\controllers\News.php(15): App\View->display('C:\\Wamp\\www\\pro...')
-#6 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionIndex()
-#7 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('Index')
-#8 {main}
-Error: Допущена ошибка в запросе!
-#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * FOM au...', 'App\\Models\\Auth...', Array)
-#1 C:\Wamp\www\profit\php2\app\models\News.php(23): App\Model::findById(1)
-#2 C:\Wamp\www\profit\php2\app\views\news\index.php(23): App\Models\News->__get('author')
-#3 C:\Wamp\www\profit\php2\app\View.php(31): include('C:\\Wamp\\www\\pro...')
-#4 C:\Wamp\www\profit\php2\app\View.php(21): App\View->render('C:\\Wamp\\www\\pro...')
-#5 C:\Wamp\www\profit\php2\app\controllers\News.php(15): App\View->display('C:\\Wamp\\www\\pro...')
-#6 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionIndex()
-#7 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('Index')
-#8 {main}
-Database error: Допущена ошибка в запросе!
-#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * FOM au...', 'App\\Models\\Auth...', Array)
-#1 C:\Wamp\www\profit\php2\app\models\News.php(23): App\Model::findById(1)
-#2 C:\Wamp\www\profit\php2\app\views\news\index.php(23): App\Models\News->__get('author')
-#3 C:\Wamp\www\profit\php2\app\View.php(31): include('C:\\Wamp\\www\\pro...')
-#4 C:\Wamp\www\profit\php2\app\View.php(21): App\View->render('C:\\Wamp\\www\\pro...')
-#5 C:\Wamp\www\profit\php2\app\controllers\News.php(15): App\View->display('C:\\Wamp\\www\\pro...')
-#6 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionIndex()
-#7 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('Index')
-#8 {main}
+#0 C:\Wamp\www\profit\php2\app\Model.php(114): App\Db->query('SELECT * ROM ne...', 'App\\Models\\News', Array)
+#1 C:\Wamp\www\profit\php2\app\controllers\News.php(22): App\Model::findById(46)
+#2 C:\Wamp\www\profit\php2\app\controllers\Controller.php(20): App\Controllers\News->actionView()
+#3 C:\Wamp\www\profit\php2\index.php(26): App\Controllers\Controller->action('View')
+#4 {main}
