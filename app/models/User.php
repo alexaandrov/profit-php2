@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Model;
+use App\MultiException;
 
 class User extends Model implements HasEmail
 {
@@ -79,5 +80,20 @@ class User extends Model implements HasEmail
     public function setEmail(string $email)
     {
         $this->email = $email;
+    }
+
+    public function fill($data = [])
+    {
+        $e = new MultiException();
+        if (empty($data['firstName'])) {
+            $e[] = new \Exception('Заголовок неверный');
+        }
+        if (empty($data['lastName'])) {
+            $e[] = new \Exception('Текст неверный');
+        }
+        if (empty($data['email'])) {
+            $e[] = new \Exception('Неверный адрес эл. почты');
+        }
+        throw $e;
     }
 }
