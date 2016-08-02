@@ -1,15 +1,15 @@
 <?php if (isset($status) && $status): ?>
     <div class="alert alert-success">Пользователь успешно создан</div>
 <?php endif; ?>
-<?php if (isset($status) && ! $status): ?>
+<?php if (isset($status) && !$status): ?>
     <div class="alert alert-warning">Пользователь не создан</div>
 <?php endif; ?>
 
 <?php if (isset($errors)): ?>
     <?php foreach ($errors as $error): ?>
         <div class="alert alert-danger">
-        <?= $error->getMessage() ?>
-    </div>
+            <?= $error->getMessage() ?>
+        </div>
     <?php endforeach; ?>
 <?php endif; ?>
 

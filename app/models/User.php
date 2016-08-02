@@ -57,7 +57,7 @@ class User extends Model implements HasEmail
     {
         return $this->email;
     }
-    
+
     /**
      * @param mixed $firstName
      */

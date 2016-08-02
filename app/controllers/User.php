@@ -29,16 +29,15 @@ class User extends Controller
 
     protected function actionCreate()
     {
-        if (! empty($_POST)) {
+        if (!empty($_POST)) {
             $values = [
                 'firstName' => $_POST['firstName'],
-                'lastName'  => $_POST['lastName'],
-                'email'     => $_POST['email']
+                'lastName' => $_POST['lastName'],
+                'email' => $_POST['email']
             ];
         } else {
             $values = [];
         }
-        var_dump($values);
         try {
             $user = new \App\Models\User();
             $user->fill($values);

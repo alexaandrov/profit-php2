@@ -2,8 +2,8 @@
 
 namespace App;
 
-class Collection implements \ArrayAccess,
-                            \Iterator
+class Collection
+    implements \ArrayAccess, \Iterator
 {
     use TCollection;
 }

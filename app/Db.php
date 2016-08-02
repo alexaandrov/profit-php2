@@ -23,7 +23,7 @@ class Db
     {
         $sth = $this->dbh->prepare($sql);
         $res = $sth->execute($data);
-        if (! $res) {
+        if (!$res) {
             throw new DbException('Допущена ошибка в запросе!');
         }
         return $res;
@@ -33,7 +33,7 @@ class Db
     {
         $sth = $this->dbh->prepare($sql);
         $res = $sth->execute($data);
-        if (! $res) {
+        if (!$res) {
             throw new DbException('Допущена ошибка в запросе!');
         }
         if (false !== $res) {

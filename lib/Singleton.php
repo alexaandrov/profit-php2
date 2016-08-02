@@ -7,7 +7,9 @@ trait Singleton
 {
     protected static $instance;
 
-    protected function __construct() {}
+    protected function __construct()
+    {
+    }
 
     public static function instance()
     {

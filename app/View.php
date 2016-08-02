@@ -15,7 +15,7 @@ class View implements \Countable
         $this->js = $this->render(__DIR__ . '/../web/templates/assets/js.php');
         $this->header = $this->render(__DIR__ . '/../web/templates/header.php');
     }
-    
+
     public function display($template)
     {
         $this->body = $this->render($template);

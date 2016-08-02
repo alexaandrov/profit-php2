@@ -24,7 +24,7 @@ class Config
 
     public function insert()
     {
-        if (! $this->isNew()) {
+        if (!$this->isNew()) {
             return;
         }
         $columns = [];
@@ -34,7 +34,7 @@ class Config
                 continue;
             }
             $columns[] = $key;
-            $values[':'.$key] = $value;
+            $values[':' . $key] = $value;
         }
         $sql = 'INSERT INTO ' . static::TABLE .
             ' (' . implode(', ', $columns) . ')

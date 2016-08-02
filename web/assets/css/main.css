@@ -79,6 +79,7 @@ header ul li a {
 header ul li a:hover {
     border-bottom: 1px solid green;
 }
+
 /* Header end*/
 
 /* Article start */
@@ -98,6 +99,7 @@ article p {
     font-family: "Segoe UI", monospace;
     font-size: 0.9em;
 }
+
 /* Article end */
 
 input {

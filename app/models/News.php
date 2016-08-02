@@ -59,8 +59,9 @@ class News extends Model
     {
         return $this->text;
     }
-    
-    public function setAuthor($id) {
+
+    public function setAuthor($id)
+    {
         if (!empty($id)) {
             $this->author_id = $id;
         }

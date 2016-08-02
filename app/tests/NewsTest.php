@@ -15,11 +15,11 @@ class NewsTest extends \PHPUnit_Framework_TestCase
 
     public function testFindAllNews()
     {
-        assert(! empty($this->news->findAll()));
+        assert(!empty($this->news->findAll()));
     }
 
     public function testFindByIdNews()
     {
-        assert(! empty($this->news->findById(1)));
+        assert(!empty($this->news->findById(1)));
     }
 }

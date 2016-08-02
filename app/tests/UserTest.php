@@ -15,11 +15,11 @@ class UserTest extends \PHPUnit_Framework_TestCase
 
     public function testFindAllUsers()
     {
-        assert(! empty($this->users->findAll()));
+        assert(!empty($this->users->findAll()));
     }
 
     public function testFindByIdUser()
     {
-        assert(! empty($this->users->findById(1)));
+        assert(!empty($this->users->findById(1)));
     }
 }

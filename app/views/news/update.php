@@ -1,7 +1,7 @@
 <?php if (isset($status) && $status): ?>
     <div class="alert alert-success">Новость № <?= $_GET['id'] ?> успешно обновлена</div>
 <?php endif; ?>
-<?php if (isset($status) && ! $status): ?>
+<?php if (isset($status) && !$status): ?>
     <div class="alert alert-warning">Новость № <?= $_GET['id'] ?> не обновлена</div>
 <?php endif; ?>
 <div class="col-md-12">

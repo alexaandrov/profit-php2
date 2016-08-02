@@ -17,7 +17,7 @@ abstract class Model
 
     public function insert()
     {
-        if (! $this->isNew()) {
+        if (!$this->isNew()) {
             return;
         }
         $columns = [];
@@ -27,7 +27,7 @@ abstract class Model
                 continue;
             }
             $columns[] = $key;
-            $values[':'.$key] = $value;
+            $values[':' . $key] = $value;
         }
 
         $sql = 'INSERT INTO ' . static::TABLE .
@@ -48,11 +48,11 @@ abstract class Model
         $values = [];
         foreach ($this as $key => $value) {
             if ('id' == $key) {
-                $values[':'.$key] = $value;
+                $values[':' . $key] = $value;
                 continue;
             }
             $columns[] = $key;
-            $values[':'.$key] = $value;
+            $values[':' . $key] = $value;
         }
 
         for ($i = 0; $i < count($columns); $i++) {
@@ -84,7 +84,7 @@ abstract class Model
 
     public static function deleteById($id)
     {
-        if (! static::findById($id)) {
+        if (!static::findById($id)) {
             return false;
         }
 

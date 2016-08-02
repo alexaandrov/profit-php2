@@ -27,7 +27,7 @@ class News extends Controller
     {
         $id = $_GET['id'];
         $model = NewsModel::findById($id);
-        
+
         $this->view->title = 'Edit news ' . $id;
         if (empty($_POST)) {
             $this->view->article = NewsModel::FindById($id);
