@@ -8,7 +8,7 @@ namespace App;
  */
 class AppAsset
 {
-    public $assetsPath = '/web/assets/';
+    public $assetsPath = '/app/web/assets/';
 
     public $css = [
         'css/bootstrap.min.css',

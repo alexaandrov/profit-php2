@@ -11,15 +11,15 @@ class View implements \Countable
 
     public function __construct()
     {
-        $this->css = $this->render(__DIR__ . '/../web/templates/assets/css.php');
-        $this->js = $this->render(__DIR__ . '/../web/templates/assets/js.php');
-        $this->header = $this->render(__DIR__ . '/../web/templates/header.php');
+        $this->css = $this->render(__DIR__ . '/web/templates/assets/css.php');
+        $this->js = $this->render(__DIR__ . '/web/templates/assets/js.php');
+        $this->header = $this->render(__DIR__ . '/web/templates/header.php');
     }
 
     public function display($template)
     {
         $this->body = $this->render($template);
-        echo $this->render(__DIR__ . '/../web/templates/main.php');
+        echo $this->render(__DIR__ . '/web/templates/main.php');
     }
 
     public function render($template)
