@@ -30,19 +30,13 @@ abstract class Model
             $values[':'.$key] = $value;
         }
 
-        $sql = 'INSERT NTO ' . static::TABLE .
+        $sql = 'INSERT INTO ' . static::TABLE .
             ' (' . implode(', ', $columns) . ')
             VALUES (' . implode(', ', array_keys($values)) . ');';
 
         $db = Db::instance();
 
-        try {
-            return $db->execute($sql, $values);
-        } catch (DbException $e) {
-            echo $e->getMessage() . '<br><br>';
-            echo $e->getTraceAsString();
-            die;
-        }
+        return $db->execute($sql, $values);
     }
 
     public function update()
@@ -75,29 +69,17 @@ abstract class Model
         }
 
         $db = Db::instance();
-
-        try {
-            return $db->execute($sql, $values);
-        } catch (DbException $e) {
-            echo $e->getMessage() . '<br><br>';
-            echo $e->getTraceAsString();
-            die;
-        }
+        return $db->execute($sql, $values);
     }
 
     public static function findAll()
     {
         $db = Db::instance();
-        try {
-            return $db->query(
-                'SELECT * FROM ' . static::TABLE,
-                static::class
-            );
-        } catch (DbException $e) {
-            echo $e->getMessage() . '<br><br>';
-            echo $e->getTraceAsString() ;
-            die;
-        }
+
+        return $db->query(
+            'SELECT * FROM ' . static::TABLE,
+            static::class
+        );
     }
 
     public static function deleteById($id)
@@ -110,15 +92,7 @@ abstract class Model
         $params = [':id' => $id];
         $db = Db::instance();
 
-        try {
-            $db->execute($sql, $params);
-        }  catch (DbException $e) {
-            echo $e->getMessage() . '<br><br>';
-            echo $e->getTraceAsString() ;
-            die;
-        }
-
-        return true;
+        return $db->execute($sql, $params);
     }
 
     /**
@@ -130,27 +104,21 @@ abstract class Model
         $db = Db::instance();
 
         if (empty($id) || $id < 1) {
-            return false;
+            return null;
         }
-
-        try {
-            $data = $db->query(
-                'SELECT * FROM ' . static::TABLE .
-                ' WHERE id=:id',
-                static::class,
-                [':id' => $id]
-            );
-        } catch (DbException $e) {
-            echo "Допущена ошибка в запросе";
-            die;
-        }
+//
+        $data = $db->query(
+            'SELECT * FROM ' . static::TABLE .
+            ' WHERE id=:id',
+            static::class,
+            [':id' => $id]
+        );
 
         if ($data) {
             return $data[0];
         } else {
             return false;
         }
+
     }
 }
-
-//    @todo Добавить общее свойство id и общий метод getId()

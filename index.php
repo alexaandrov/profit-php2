@@ -27,8 +27,9 @@ try {
 } catch (\App\Exceptions\Core $e) {
     echo 'Возникло ислючение приложения';
 } catch (\App\Exceptions\Db $e) {
-    echo 'Возникло исключение базы данных';
-    $e->getMessage();
+    $view = new \App\View();
+    $view->e = $e;
+    $view->display(__DIR__ . '/web/templates/db-exception.php');
 }
 
 //$controller->action($action);
