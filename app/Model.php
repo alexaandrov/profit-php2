@@ -106,7 +106,7 @@ abstract class Model
         if (empty($id) || $id < 1) {
             return null;
         }
-//
+
         $data = $db->query(
             'SELECT * ROM ' . static::TABLE .
             ' WHERE id=:id',
@@ -119,6 +119,5 @@ abstract class Model
         } else {
             return false;
         }
-
     }
 }
