@@ -1,0 +1,18 @@
+{
+    "name": "greg/php2",
+    "description": "ProfIT lessons",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Grigory Alexandrov",
+            "email": "alexaandrov@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "greg\\": ""
+        }
+    }
+}
